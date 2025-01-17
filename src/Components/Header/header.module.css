@@ -1,0 +1,30 @@
+.header {
+  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.24);
+  background: #2196f3;
+}
+
+.nav__list {
+  display: flex;
+}
+
+.nav__item {
+  cursor: pointer;
+  padding: 21.5px 23px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  letter-spacing: 0.02em;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+}
+
+.nav__item:hover {
+  color: #fff;
+  background: #409ff1;
+}
+
+.active {
+  color: #fff;
+  background: #1e88e5;
+}

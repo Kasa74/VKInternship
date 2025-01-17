@@ -1,0 +1,11 @@
+@import url("./_vars.css");
+
+body {
+  font-family: var(--font-family);
+}
+
+.container {
+  max-width: 1356px;
+  margin: auto;
+  padding: 0px 20px;
+}
