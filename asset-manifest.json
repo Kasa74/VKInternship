@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/VKInternship/static/css/main.4570b2cc.css",
+    "main.js": "/VKInternship/static/js/main.b542e963.js",
+    "index.html": "/VKInternship/index.html",
+    "main.4570b2cc.css.map": "/VKInternship/static/css/main.4570b2cc.css.map",
+    "main.b542e963.js.map": "/VKInternship/static/js/main.b542e963.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4570b2cc.css",
+    "static/js/main.b542e963.js"
+  ]
+}
