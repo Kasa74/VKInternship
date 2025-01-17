@@ -22,7 +22,8 @@ export const fetchDataByIds = async (catsIds: string[]) => {
       fetch(`https://api.thecatapi.com/v1/images/${id}`, {
         headers: {
           "Content-Type": "application/json",
-          "x-api-key": "YOUR_API_KEY",
+          "x-api-key":
+            "live_HS3bvUgXt85sBag0LelWB4i0Fu3V6jtpfXlPjq9F9xUUpQrJyTmrPIwuyNO2FNCV",
         },
       })
     );
