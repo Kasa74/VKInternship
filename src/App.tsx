@@ -1,7 +1,7 @@
 import React from "react";
 import { HashRouter, Route, Routes } from "react-router-dom";
 import { MainPage } from "./pages/MainPage";
-import { FavoritesPage } from "./pages/FavoritesPage";
+import { FavoritesPage } from "./pages/FavoriteCatsPage";
 
 export const App = () => (
   <HashRouter>

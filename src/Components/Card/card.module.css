@@ -5,10 +5,26 @@
   transition: transform 0.3s ease;
 }
 
+.card__content {
+  width: 100%;
+  height: 100%;
+}
+
 .card__img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.card__content.hidden {
+  position: absolute;
+  visibility: hidden;
+}
+
+.card__content.visible {
+  opacity: 1;
+  position: static;
+  visibility: visible;
 }
 
 .card:hover {
@@ -22,7 +38,7 @@
   bottom: 23px;
   width: 38px;
   height: auto;
-  stroke: #f24e1e;
+  stroke: var(--color-red);
   fill: transparent;
   stroke-width: 4px;
   opacity: 0;
@@ -30,7 +46,7 @@
 }
 
 .heart__icon:hover {
-  fill: #f24e1e;
+  fill: var(--color-red);
 }
 
 .heart__icon:active {
@@ -38,9 +54,34 @@
 }
 
 .heart__icon.active {
-  fill: #f24e1e;
+  opacity: 1;
+  fill: var(--color-red);
 }
 
 .card:hover .heart__icon {
   opacity: 1;
+}
+
+.skeleton {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  height: 100%;
+  background-color: #e0e0e0;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: #e0e0e0;
+  }
+  50% {
+    background-color: #f0f0f0;
+  }
+  100% {
+    background-color: #e0e0e0;
+  }
 }

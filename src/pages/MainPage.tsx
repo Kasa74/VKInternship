@@ -1,11 +1,11 @@
 import { Header } from "../Components/Header/Header";
-import { InfinityScroll } from "../Components/InfinityScroll/InfinityScroll";
+import { AllCats } from "../Components/AllCats/AllCats";
 
 export const MainPage = () => {
   return (
     <>
       <Header />
-      <InfinityScroll />
+      <AllCats />
     </>
   );
 };

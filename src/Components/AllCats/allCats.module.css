@@ -1,8 +1,8 @@
-.scroll {
-  margin-top: 47px;
+.allCats {
+  margin-top: 30px;
 }
 
-.scroll__content {
+.allCats__content {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   column-gap: 30px;
@@ -20,7 +20,7 @@
   line-height: 150%;
   letter-spacing: 0.02em;
   text-align: center;
-  color: #000;
+  color: var(--color-black);
 }
 
 .end__block {
@@ -34,5 +34,29 @@
   line-height: 150%;
   letter-spacing: 0.02em;
   text-align: center;
-  color: #000;
+  color: var(--color-black);
+}
+
+@media (max-width: 480px) {
+  .allCats__content {
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  .allCats__content {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .allCats__content {
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 10px;
+    row-gap: 10px;
+  }
 }

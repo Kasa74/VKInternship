@@ -1,15 +1,17 @@
 import { useEffect, useRef, useState } from "react";
-import { fetchDataByPage } from "../../api/fetch";
-import styles from "./scroll.module.css";
-import { CatObject, DataValue, FavoriteItem } from "./types";
+import { fetchCatsByPage } from "../../api/fetch";
+import styles from "./allCats.module.css";
+import { Cat } from "./types";
 import { Card } from "../Card/Card";
 
-export const InfinityScroll = () => {
-  const [data, setData] = useState<DataValue[]>([]);
-  const [favorites, setFavorites] = useState<FavoriteItem[]>([]);
+export const AllCats = () => {
+  const [data, setData] = useState<Cat[]>([]);
+  const [favorites, setFavorites] = useState<string[]>([]);
   const [hasMore, setHasMore] = useState(true);
   const [isLoading, setIsLoading] = useState(false);
   const [page, setPage] = useState(1);
+
+  // infinityScrollRefs
   const observerRef = useRef<IntersectionObserver | null>(null);
   const lastItemRef = useRef<HTMLDivElement | null>(null);
 
@@ -47,7 +49,7 @@ export const InfinityScroll = () => {
   const fetchMoreData = async () => {
     setIsLoading(true);
     try {
-      const data = await fetchDataByPage(page);
+      const data = await fetchCatsByPage(page);
       setData((prevData) => [...prevData, ...data]);
       setPage((prevPage) => prevPage + 1);
       if (data.length === 0) {
@@ -60,10 +62,10 @@ export const InfinityScroll = () => {
     }
   };
 
-  const toggleFavorite = (item: CatObject) => {
-    const updatedFavorites = favorites.some((favItem) => favItem.id === item.id)
-      ? favorites.filter((favItem) => favItem.id !== item.id)
-      : [...favorites, item];
+  const toggleFavorite = (item: Cat) => {
+    const updatedFavorites = favorites.some((favItem) => favItem === item.id)
+      ? favorites.filter((favItem) => favItem !== item.id)
+      : [...favorites, item.id];
     setFavorites(updatedFavorites);
     try {
       localStorage.setItem("favorites", JSON.stringify(updatedFavorites));
@@ -77,16 +79,16 @@ export const InfinityScroll = () => {
   };
 
   return (
-    <div className={styles.scroll}>
+    <div className={styles.allCats}>
       <div className="container">
-        <div className={styles.scroll__content}>
+        <div className={styles.allCats__content}>
           {data.map((cat, index) => {
             const isLastItem = index + 1 === data.length;
             return (
               <Card
                 key={cat.id + index}
                 cat={cat}
-                isFavorite={favorites.some((item) => item.id === cat.id)}
+                isFavorite={favorites.some((item) => item === cat.id)}
                 onHeartClick={() => toggleFavorite(cat)}
                 ref={isLastItem ? lastItemRef : null}
               />
