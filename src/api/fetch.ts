@@ -1,6 +1,14 @@
-export const fetchData = async () => {
+interface CatData {
+  breeds: [];
+  id: string;
+  url: string;
+  width: number;
+  height: number;
+}
+
+export const fetchDataByPage = async (page: number): Promise<CatData[]> => {
   const response = await fetch(
-    "https://api.thecatapi.com/v1/images/search?limit=30",
+    `https://api.thecatapi.com/v1/images/search?page=${page}&limit=30`,
     {
       headers: {
         "Content-Type": "application/json",
@@ -16,7 +24,7 @@ export const fetchData = async () => {
   return response.json();
 };
 
-export const fetchDataByIds = async (catsIds: string[]) => {
+export const fetchDataByIds = async (catsIds: string[]): Promise<CatData[]> => {
   try {
     const requests = catsIds.map((id) =>
       fetch(`https://api.thecatapi.com/v1/images/${id}`, {
