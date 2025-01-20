@@ -40,23 +40,23 @@
 @media (max-width: 480px) {
   .allCats__content {
     grid-template-columns: repeat(2, 1fr);
-    column-gap: 10px;
-    row-gap: 10px;
+    column-gap: 20px;
+    row-gap: 20px;
   }
 }
 
-@media (max-width: 767px) {
+@media (min-width: 481px) and (max-width: 767px) {
   .allCats__content {
     grid-template-columns: repeat(3, 1fr);
-    column-gap: 10px;
-    row-gap: 10px;
+    column-gap: 20px;
+    row-gap: 20px;
   }
 }
 
 @media (min-width: 768px) and (max-width: 991px) {
   .allCats__content {
     grid-template-columns: repeat(4, 1fr);
-    column-gap: 10px;
-    row-gap: 10px;
+    column-gap: 20px;
+    row-gap: 20px;
   }
 }

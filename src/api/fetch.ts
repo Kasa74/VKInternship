@@ -8,7 +8,7 @@ interface Cat {
 
 export const fetchCatsByPage = async (page: number): Promise<Cat[]> => {
   const response = await fetch(
-    `https://api.thecatapi.com/v1/images/search?page=${page}&limit=30`,
+    `https://api.thecatapi.com/v1/images/search?page=${page}&limit=20`,
     {
       headers: {
         "Content-Type": "application/json",
