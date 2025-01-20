@@ -93,7 +93,7 @@ export const FavoriteCats = () => {
     <div className={styles.favorites}>
       <div className="container">
         <div className={styles.favorites__content}>
-          {data.length === 0 && (
+          {favorites.length === 0 && (
             <div className={styles.favorite__empty}>
               Вы еще не добавили никого в своих избранных котиков!
             </div>
